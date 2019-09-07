@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
 
 
-  resources :blogs
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
 
 
   get 'about-us', to: 'pages#about'
