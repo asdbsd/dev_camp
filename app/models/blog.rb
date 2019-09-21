@@ -6,4 +6,12 @@ class Blog < ApplicationRecord
 
   validates_presence_of :title, :body
 
+  def self.special_blogs
+    all
+  end
+
+  def self.featured_blogs
+    limit(2)
+  end
+
 end
