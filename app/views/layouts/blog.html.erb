@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,14 +15,64 @@
   </head>
 
   <body>
+    <div class="container">
+      <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-12 text-center">
+            <%= link_to "DevCamp", root_path, class: 'blog-header-logo text-dark' %>
+          </div>
+        </div>
+      </header>
+
+      <%= render 'shared/blog_nav', location: 'bottom' %>
+    </div>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= login_helper %>
 
-    <%= yield %>
+    <main role="main" class="container">
+      <div class="row">
+        <!-- START BLOG POSTS -->
+        <div class="col-md-8 blog-main">
+          <%= yield %>
+        </div>
+        <!-- END BLOG POSTS -->
 
-    <%= render 'shared/nav', location: 'bottom' %>
+        <!-- START OF SIDEBAR -->
+        <aside class="col-md-4 blog-sidebar">
+          <div class="p-3 mb-3 bg-light rounded">
+            <h4 class="font-italic">Sidebar</h4>
+            <ol class="list-unstyled mb-0">
+              <li><a href="#">March 2014</a></li>
+              <li><a href="#">February 2014</a></li>
+              <li><a href="#">January 2014</a></li>
+              <li><a href="#">December 2013</a></li>
+              <li><a href="#">November 2013</a></li>
+              <li><a href="#">October 2013</a></li>
+              <li><a href="#">September 2013</a></li>
+              <li><a href="#">August 2013</a></li>
+              <li><a href="#">July 2013</a></li>
+              <li><a href="#">June 2013</a></li>
+              <li><a href="#">May 2013</a></li>
+              <li><a href="#">April 2013</a></li>
+            </ol>
+          </div>
+        </aside>
+        <!-- END OF SIDEBAR -->
+      </div>
+    </main>
+
+    <!-- START OF FOOTER -->
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+    <!-- END OF FOOTER -->
+
     
     <%= source_helper("blog") %>
   </body>
