@@ -20,7 +20,7 @@
 
     <!-- START MAIN AREA -->
     <main role="main">
-      <%= render 'shared/portfolio_masthead' %>
+      <%= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
 
       <div class="album py-5 bg-light">
         <div class="container">
