@@ -29,5 +29,6 @@ module DevcampPortfolio
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.autoload_paths += %W(#{config.root}/lib #{config.root}/app/uploaders)
   end
 end
